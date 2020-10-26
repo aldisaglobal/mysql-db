@@ -60,7 +60,7 @@ foreach ($db as $row) {
 `$db->hasResult()` - whether query returned a result  
 `$db->getInsertID()` - returns InsertID of last insert query  
 `$db->getRow([$mode = "object"])` - returns next row as object {pass "array" to get back an assoc array}  
-`$db->getRowNum($num, $mode = "object")` - returns row at \$num index
+`$db->getRowNum($num, $mode = "object")` - returns row at \$num index  
 `$db->getNumFields()` - returns number of columns in result row  
 `$db->getFields()` - returns array of column names  
 `$db->getNumRows()` - returns total number of rows in result
