@@ -32,7 +32,7 @@ You can create an array and pass it to the Factory method
 Use the static Factory class to get an object:
 
 ```
-use Aldisa\MySQL\Factory;
+use AldisaGlobal\MySQL\Factory;
 
 $db = Factory:create([$params]);
 ```
