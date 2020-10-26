@@ -1,6 +1,6 @@
 <?php
 
-namespace Aldisa\MySQL;
+namespace AldisaGlobal\MySQL;
 
 class Browser implements \Iterator
 {
@@ -17,7 +17,7 @@ class Browser implements \Iterator
      * @var object
      */
     private $result;
-    
+
     /**
      * Instanstiate using mysqli connection object
      *
@@ -51,7 +51,7 @@ class Browser implements \Iterator
         return $this->conn->info;
     }
 
-     /**
+    /**
      * Return error prop from conn
      *
      * @return string
@@ -81,7 +81,7 @@ class Browser implements \Iterator
         return ($this->conn->errno === 0 ? false : true);
     }
 
-   /**
+    /**
      * Executes SQL Query
      *
      * @param  string $sql
@@ -108,7 +108,7 @@ class Browser implements \Iterator
         return ($this->result instanceof \mysqli_result);
     }
 
-  /**
+    /**
      * Return insert_id prop from conn
      *
      * @return int
@@ -125,7 +125,10 @@ class Browser implements \Iterator
      */
     public function getRow($mode = "object")
     {
-        if (!($this->result instanceof \mysqli_result)) throw new \Exception("DB Error: There is no result");
+        if (!($this->result instanceof \mysqli_result)) {
+            throw new \Exception("DB Error: There is no result");
+        }
+
         return ($mode == "array" ? $this->result->fetch_array() : $this->result->fetch_object());
     }
 
@@ -137,10 +140,14 @@ class Browser implements \Iterator
      */
     public function getRowNum($num, $mode = "object")
     {
-        if (!($this->result instanceof \mysqli_result)) throw new \Exception("DB Error: There is no result");
-        
+        if (!($this->result instanceof \mysqli_result)) {
+            throw new \Exception("DB Error: There is no result");
+        }
+
         $found = $this->result->data_seek($num);
-        if (false === $found) return false;
+        if (false === $found) {
+            return false;
+        }
 
         return ($mode == "array" ? $this->result->fetch_array() : $this->result->fetch_object());
     }
@@ -152,7 +159,10 @@ class Browser implements \Iterator
      */
     public function getNumFields()
     {
-        if (!($this->result instanceof \mysqli_result)) throw new \Exception("DB Error: There is no result");
+        if (!($this->result instanceof \mysqli_result)) {
+            throw new \Exception("DB Error: There is no result");
+        }
+
         return $this->result->field_count;
     }
 
@@ -163,7 +173,10 @@ class Browser implements \Iterator
      */
     public function getFields()
     {
-        if (!($this->result instanceof \mysqli_result)) throw new \Exception("DB Error: There is no result");
+        if (!($this->result instanceof \mysqli_result)) {
+            throw new \Exception("DB Error: There is no result");
+        }
+
         return $this->result->fetch_fields();
     }
 
@@ -174,7 +187,10 @@ class Browser implements \Iterator
      */
     public function getNumRows()
     {
-        if (!($this->result instanceof \mysqli_result)) throw new \Exception("DB Error: There is no result");
+        if (!($this->result instanceof \mysqli_result)) {
+            throw new \Exception("DB Error: There is no result");
+        }
+
         return $this->result->num_rows;
     }
 
@@ -185,26 +201,38 @@ class Browser implements \Iterator
 
     public function current()
     {
-        if (false === $this->hasResult()) throw new \Exception("DB Error: There is no result");
+        if (false === $this->hasResult()) {
+            throw new \Exception("DB Error: There is no result");
+        }
+
         return $this->row;
     }
 
     public function key()
     {
-        if (false === $this->hasResult()) throw new \Exception("DB Error: There is no result");
+        if (false === $this->hasResult()) {
+            throw new \Exception("DB Error: There is no result");
+        }
+
         return $this->index;
     }
 
     public function next()
     {
-        if (false === $this->hasResult()) throw new \Exception("DB Error: There is no result");
+        if (false === $this->hasResult()) {
+            throw new \Exception("DB Error: There is no result");
+        }
+
         $this->index++;
         $this->row = $this->getRow();
     }
 
     public function rewind()
     {
-        if (false === $this->hasResult()) throw new \Exception("DB Error: There is no result");
+        if (false === $this->hasResult()) {
+            throw new \Exception("DB Error: There is no result");
+        }
+
         $this->index = 0;
         $this->result->data_seek(0);
         $this->row = $this->getRow();
@@ -212,7 +240,10 @@ class Browser implements \Iterator
 
     public function valid()
     {
-        if (false === $this->hasResult()) throw new \Exception("DB Error: There is no result");
+        if (false === $this->hasResult()) {
+            throw new \Exception("DB Error: There is no result");
+        }
+
         return $this->index < $this->result->num_rows;
     }
 }
