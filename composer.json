@@ -1,22 +1,22 @@
 {
-    "name": "aldisa/mysql-db",
-    "description": "A Simple MySQL DB Object",
-	"type": "library",
-	"license": "MIT",
-    "authors": [
-        {
-            "name": "Abid",
-            "email": "asaigol@aldisa.ca"
-        }
-    ],
-    "minimum-stability": "stable",
-	"autoload": {
-		"psr-4": {
-			"Aldisa\\MySQL\\": "src/"
-		}
-	},
-    "require": {
-		"php":"^7.0",
-		"ext-mysqli":"*"
-	}
+  "name": "aldisaglobal/mysql-db",
+  "description": "A Simple MySQL DB Object",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Abid",
+      "email": "asaigol@aldisa.ca"
+    }
+  ],
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "Aldisa\\MySQL\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^7.0",
+    "ext-mysqli": "*"
+  }
 }

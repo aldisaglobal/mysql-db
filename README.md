@@ -1,8 +1,8 @@
 # Private Library Package
 
-Vendor: aldisa
-Package: mysql-db
-Author: Abid
+Vendor: aldisaglobal  
+Package: mysql-db  
+Author: Abid  
 Version: 0.1
 
 ## Connection Parameters
@@ -51,16 +51,16 @@ foreach ($db as $row) {
 
 ## The full Object Interface
 
-`$db->escape($str)` - returns escaped string
-`$db->getResponse()` - returns last server response
-`$db->getError()` - returns error string from last query
-`$db->getErrno()` - returns errno from last query
-`$db->hasError()` - true if last query had an error
-`$db->query($sql)` - executes query
-`$db->hasResult()` - whether query returned a result
-`$db->getInsertID()` - returns InsertID of last insert query
-`$db->getRow([$mode = "object"])` - returns next row as object {pass "array" to get back an assoc array}
+`$db->escape($str)` - returns escaped string  
+`$db->getResponse()` - returns last server response  
+`$db->getError()` - returns error string from last query  
+`$db->getErrno()` - returns errno from last query  
+`$db->hasError()` - true if last query had an error  
+`$db->query($sql)` - executes query  
+`$db->hasResult()` - whether query returned a result  
+`$db->getInsertID()` - returns InsertID of last insert query  
+`$db->getRow([$mode = "object"])` - returns next row as object {pass "array" to get back an assoc array}  
 `$db->getRowNum($num, $mode = "object")` - returns row at \$num index
-`$db->getNumFields()` - returns number of columns in result row
-`$db->getFields()` - returns array of column names
+`$db->getNumFields()` - returns number of columns in result row  
+`$db->getFields()` - returns array of column names  
 `$db->getNumRows()` - returns total number of rows in result
