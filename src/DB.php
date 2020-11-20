@@ -178,10 +178,16 @@ class DB extends DBIterator
         return $this->conn->insert_id;
     }
 
+    /**
+     * get the current row object
+     *
+     * @return object|bool
+     */
     public function getRow()
     {
-        return $this->current();
+        return ($this->valid() ? $this->current() : false);
     }
+
     /**
      * Fetch next row from result
      *
