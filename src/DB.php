@@ -31,7 +31,7 @@ class DB extends DBIterator
      * @param  mixed $config
      * @return void
      */
-    public static function create(array $config = [])
+    public static function create(array $config = []): DB
     {
         $params = array(
             'MYSQL_HOST' => "",
@@ -178,6 +178,10 @@ class DB extends DBIterator
         return $this->conn->insert_id;
     }
 
+    public function getRow()
+    {
+        return $this->current();
+    }
     /**
      * Fetch next row from result
      *
@@ -186,7 +190,7 @@ class DB extends DBIterator
      */
     public function getNextRow($mode = "object")
     {
-        if (!($this->result instanceof \mysqli_result)) {
+        if (!$this->hasResult()) {
             throw new \Exception("DB Error: There is no result");
         }
 
@@ -213,7 +217,7 @@ class DB extends DBIterator
      */
     public function getRowNum($num, $mode = "object")
     {
-        if (!($this->result instanceof \mysqli_result)) {
+        if (!$this->hasResult()) {
             throw new \Exception("DB Error: There is no result");
         }
 
@@ -232,7 +236,7 @@ class DB extends DBIterator
      */
     public function getNumFields()
     {
-        if (!($this->result instanceof \mysqli_result)) {
+        if (!$this->hasResult()) {
             throw new \Exception("DB Error: There is no result");
         }
 
@@ -246,7 +250,7 @@ class DB extends DBIterator
      */
     public function getFields()
     {
-        if (!($this->result instanceof \mysqli_result)) {
+        if (!$this->hasResult()) {
             throw new \Exception("DB Error: There is no result");
         }
 
@@ -260,7 +264,7 @@ class DB extends DBIterator
      */
     public function getNumRows()
     {
-        if (!($this->result instanceof \mysqli_result)) {
+        if (!$this->hasResult()) {
             throw new \Exception("DB Error: There is no result");
         }
 
