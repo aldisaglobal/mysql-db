@@ -31,7 +31,7 @@ abstract class DBIterator implements \Iterator
      *
      * @return object|bool
      */
-    abstract public function nextRow();
+    abstract public function getNextRow();
 
     /**
      * reset
@@ -39,7 +39,7 @@ abstract class DBIterator implements \Iterator
      *
      * @return object|bool
      */
-    abstract public function firstRow();
+    abstract public function getFirstRow();
 
     /**
      * init
@@ -99,7 +99,7 @@ abstract class DBIterator implements \Iterator
         }
 
         $this->index++;
-        $this->row = $this->nextRow();
+        $this->row = $this->getNextRow();
     }
 
     /**
@@ -115,7 +115,7 @@ abstract class DBIterator implements \Iterator
         }
 
         $this->index = 0;
-        $this->row = $this->firstRow();
+        $this->row = $this->getFirstRow();
     }
 
     /**

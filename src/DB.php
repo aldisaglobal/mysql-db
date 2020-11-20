@@ -153,7 +153,7 @@ class DB extends DBIterator
 
         if ($this->hasResult()) {
             $this->index = 0;
-            $this->row = $this->nextRow();
+            $this->row = $this->getNextRow();
         }
         return true;
     }
@@ -184,7 +184,7 @@ class DB extends DBIterator
      * @param  string $mode
      * @return mixed
      */
-    public function nextRow($mode = "object")
+    public function getNextRow($mode = "object")
     {
         if (!($this->result instanceof \mysqli_result)) {
             throw new \Exception("DB Error: There is no result");
@@ -200,7 +200,7 @@ class DB extends DBIterator
      * @param  string $mode
      * @return mixed
      */
-    public function firstRow($mode = "object")
+    public function getFirstRow($mode = "object")
     {
         return $this->getRowNum(0, $mode);
     }
