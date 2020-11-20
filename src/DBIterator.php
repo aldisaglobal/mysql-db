@@ -146,7 +146,7 @@ abstract class DBIterator implements \Iterator
             throw new \Exception("DB Error: There is no result");
         }
 
-        if (false === $this->row || !property_exists($column, $this->row)) {
+        if (false === $this->row || !property_exists($this->row, $column)) {
             return null;
         }
 
