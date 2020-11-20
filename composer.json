@@ -1,6 +1,6 @@
 {
   "name": "aldisaglobal/mysql-db",
-  "description": "A Simple MySQL DB Object",
+  "description": "A Simple Iterateable MySQL DB Query Object",
   "type": "library",
   "license": "MIT",
   "authors": [
