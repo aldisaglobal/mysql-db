@@ -52,15 +52,15 @@ foreach ($db as $row) {
 
 ## The full Object API
 
-`\AldisaGlobal\MySQL\DB::create(]$params])` - returns object with connection
-`$db->init()` - closes any open result
+`\AldisaGlobal\MySQL\DB::create(]$params])` - returns object with connection  
+`$db->init()` - closes any open result  
 `$db->escape($str)` - returns escaped string  
 `$db->getResponse()`- returns last server response `$db->getError()` - returns error string from last query  
 `$db->getErrno()`- returns errno from last query `$db->hasError()` - true if last query had an error  
-`$db->query($sql, [$buffered=true])`- executes query, pass false as second arg for unbuffered query
+`$db->query($sql, [$buffered=true])`- executes query, pass false as second arg for unbuffered query  
 `$db->hasResult()` - whether query returned a result  
-`$db->getInsertID()`- returns InsertID of last insert query `$db->nextRow([$mode = "object"])`- returns next row of result as object [pass "array" to get back an assoc array]
-`$db->firstRow([$mode = "object"])` - returns first row of result as object [pass "array" to get back an assoc array]
+`$db->getInsertID()`- returns InsertID of last insert query `$db->nextRow([$mode = "object"])`- returns next row of result as object [pass "array" to get back an assoc array]  
+`$db->firstRow([$mode = "object"])` - returns first row of result as object [pass "array" to get back an assoc array]  
 `$db->getRowNum($num, $mode = "object")` - returns row at \$num index [pass "array" to get back an assoc array]  
 `$db->getNumFields()`- returns number of columns in result row `$db->getFields()` - returns array of column names  
 `$db->getNumRows()` - returns total number of rows in result [not accurate for unbuffered queries]
