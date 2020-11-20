@@ -66,7 +66,7 @@ foreach ($db as $row) {
 
 `$db->hasError()` - true if last query had an error
 
-`$db->query($sql, [$buffered=true])`- executes query, pass false as second arg for unbuffered query
+`$db->query($sql [, $buffered=true])`- executes query, pass false as second arg for unbuffered query
 
 `$db->hasResult()` - whether query returned a result
 
@@ -76,7 +76,7 @@ foreach ($db as $row) {
 
 `$db->getFirstRow([$mode = "object"])` - returns first row of result as object
 
-`$db->getRowNum($num, $mode = "object")` - returns row at \$num index
+`$db->getRowNum($num [, $mode = "object"])` - returns row at \$num index
 
 `$db->getNumFields()`- returns number of columns in result row
 
