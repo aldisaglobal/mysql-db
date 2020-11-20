@@ -72,9 +72,9 @@ foreach ($db as $row) {
 
 `$db->getInsertID()`- returns InsertID of last insert query
 
-`$db->nextRow([$mode = "object"])`- returns next row of result as object [pass "array" to get back an assoc array]
+`$db->getNextRow([$mode = "object"])`- returns next row of result as object [pass "array" to get back an assoc array]
 
-`$db->firstRow([$mode = "object"])` - returns first row of result as object
+`$db->getFirstRow([$mode = "object"])` - returns first row of result as object
 
 `$db->getRowNum($num, $mode = "object")` - returns row at \$num index
 
