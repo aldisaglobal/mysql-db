@@ -159,6 +159,16 @@ class DB extends DBIterator
     }
 
     /**
+     * Close if result is instanceof mysqli_result
+     *
+     * @return void
+     */
+    public function close()
+    {
+        $this->result->close();
+    }
+
+    /**
      * True if result is instanceof mysqli_result
      *
      * @return bool
